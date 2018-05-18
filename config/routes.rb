@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   root :to => 'pages#home'
 
   resources :categories
@@ -10,4 +12,7 @@ Rails.application.routes.draw do
   get 'faq' => 'pages#faq'
   get 'signup' => 'users#new'
   post 'signup' => 'users#create'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 end
