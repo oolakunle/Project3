@@ -38,14 +38,19 @@
 #
 
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'sessions/new'
 
   root :to => 'pages#home'
 
   resources :categories
   resources :products
-  resources :users
+  resources :users, only: [:new, :create, :edit, :update]
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
