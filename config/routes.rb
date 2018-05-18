@@ -35,7 +35,7 @@
 #         login GET    /login(.:format)               sessions#new
 #               POST   /login(.:format)               sessions#create
 #        logout DELETE /logout(.:format)              sessions#destroy
-# 
+#
 
 Rails.application.routes.draw do
   get 'sessions/new'
@@ -54,5 +54,5 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-  # get '/logout' => 'pages#home'
+  get '/logout' => 'pages#home'
 end
