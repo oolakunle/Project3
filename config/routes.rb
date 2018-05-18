@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   resources :users
+  resources :account_activations, only: [:edit]
 
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
