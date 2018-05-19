@@ -48,10 +48,11 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :products
-  resources :users, only: [:new, :create, :edit, :update]
+  resources :users, only: [:new, :create, :edit, :update, :show]
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
+  # get 'show' => 'users#show'
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
   get 'faq' => 'pages#faq'
