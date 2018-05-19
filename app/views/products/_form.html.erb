@@ -13,22 +13,22 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title, id: :product_title %>
+    <%= f.text_field :title, id: :product_title, autofocus: true, placeholder: "An LBD", :required => 'required' %>
   </div>
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description, id: :product_description %>
+    <%= f.text_area :description, id: :product_description, autofocus: true, :required => 'required' %>
   </div>
 
   <div class="field">
-    <%= f.label :photo %>
-    <%= f.file_field :photo, id: :product_image %>
+    <%= f.label :image %>
+    <%= f.file_field :image, id: :product_image, :required => 'required' %>
   </div>
 
   <div class="field">
     <%= f.label :suburb %>
-    <%= f.text_field :suburb, id: :product_suburb %>
+    <%= f.text_field :suburb, id: :product_suburb, autofocus: true, placeholder: "Bondi", :required => 'required' %>
   </div>
 
   <div class="field">
@@ -37,6 +37,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Post Ad" %>
   </div>
 <% end %>
