@@ -18,11 +18,12 @@
 
   <div class="field">
     <%= f.label :description %>
+    <small class="text-muted">From 2 to 4000 characters</small>
     <%= f.text_area :description, id: :product_description, autofocus: true, :required => 'required' %>
   </div>
 
   <div class="field">
-    <%= f.label :image %>
+    <%= f.label :image, "Photo" %>
     <%= f.file_field :image, id: :product_image, :required => 'required' %>
   </div>
 
