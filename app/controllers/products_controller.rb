@@ -24,9 +24,9 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-
-    # raise
     @product = Product.new(product_params)
+    @product.user_id = current_user.id
+
     if params[:product][:image].present?
       cloudinary = Cloudinary::Uploader.upload( params[ "product" ][ "image" ] )
       @product.update :image => cloudinary["url"]

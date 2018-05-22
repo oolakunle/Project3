@@ -10,7 +10,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @product.image, :width => 800, :height => 800 %>
+  <%= image_tag @product.image, :width => 800, :height => 800, :class => 'img-rounded' %>
 </p>
 
 <p>
@@ -20,9 +20,21 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @product.category_id %>
+  <%= @product.category.name %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-secondary' %> |
+<p>
+  <strong>Owner:</strong>
+  <%= @product.user.name %>
+</p>
+
+<p>
+  <strong>Contact Details:</strong>
+  <%= @product.user.email %>
+</p>
+
 <%= link_to 'Back', products_path, class: 'btn btn-secondary' %> |
+<% if @product.user.id == session[:user_id] %>
+<%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-secondary' %> |
 <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+<% end %>

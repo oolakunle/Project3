@@ -74,6 +74,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  background-color: rgb(240,183,161);
   a {
     color: #555;
     &:hover {
@@ -198,4 +199,8 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+.hidden {
+  display: none;
 }

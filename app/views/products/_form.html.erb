@@ -13,13 +13,18 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title, id: :product_title, autofocus: true, placeholder: "An LBD", :required => 'required' %>
+    <%= f.text_field :title, id: :product_title, autofocus: true, placeholder: "Headphone", :required => 'required' %>
   </div>
 
   <div class="field">
     <%= f.label :description %>
     <small class="text-muted">From 2 to 4000 characters</small>
     <%= f.text_area :description, id: :product_description, autofocus: true, :required => 'required' %>
+  </div>
+
+  <div class="form-group hidden">
+      <%= f.label :booker_id %>
+      <%= f.text_field :booker_id, :value => session[:user_id], :class => 'form-control'   %>
   </div>
 
   <div class="field">
