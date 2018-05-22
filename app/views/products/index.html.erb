@@ -1,4 +1,23 @@
-<h1>Products</h1>
+<div class="defaultspacer">
+  <div class="form-page">
+    <h1>Products</h1>
+    <br />
+  </div>
+
+  <h3><%= link_to 'New Product', new_product_path %></h3>
+
+
+  <div class="row col-sm-3">
+    <h3 class>Search Products</h3>
+    <%= form_tag products_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :title, params[:title], placeholder: 'Headphones', class: 'form-control' %>
+        <br/><br/>
+        <%= submit_tag "Search", :name => nil, class: 'btn btn-default' %>
+      </p>
+    <% end %>
+  </div>
+</div>
 
 <table>
 
@@ -11,12 +30,8 @@
           <td><%= link_to product.title, product %> <br /><br /><%= product.description %></td>
         </div>
         <td><%= product.suburb %></td>
-        <td><%= product.category_id %></td>
+        <td><%= product.category.name %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>

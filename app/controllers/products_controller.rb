@@ -24,6 +24,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+
+    # raise
     @product = Product.new(product_params)
     if params[:product][:image].present?
       cloudinary = Cloudinary::Uploader.upload( params[ "product" ][ "image" ] )
@@ -72,6 +74,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :suburb, :category_id)
+      params.require(:product).permit(:title, :description, :suburb, :category_id, :user_id)
     end
 end

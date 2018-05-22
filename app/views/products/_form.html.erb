@@ -34,7 +34,7 @@
 
   <div class="field">
     <%= f.label :category_id %>
-    <%= f.number_field :category_id, id: :product_category_id %>
+    <%= f.select :category_id, Category.pluck(:name, :id), :include_blank => true %>
   </div>
 
   <div class="actions">
