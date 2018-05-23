@@ -22,7 +22,7 @@
 * gem 'bcrypt'
 
 ## Access
-The project can be accessed at [Project 0](https://projectthree.herokuapp.com/)
+The project can be accessed at [Project 3](https://projectthree.herokuapp.com/)
 
 
 ## Author
