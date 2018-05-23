@@ -41,6 +41,7 @@ This project is licensed under the MIT License
 
 ## Things I learnt and would do differently
 * Not spent too much time on the user authentication and password reset function.
+* Remove turbolink from the Gemfile at the start of the project, it never ends well if it is present.
 
 
 ## Shortcomings / challenges not overcome
