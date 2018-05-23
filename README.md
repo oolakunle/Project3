@@ -50,4 +50,5 @@ This project is licensed under the MIT License
 * Find a way a user can upload multiple images of their items.
 * Incorporate VueJS into the front end.
 * Show each item that corresponds to the respective category they belong to when you click on each category.
+* Have a caroussel of images on the front page for the products/items that have been posted.
 
