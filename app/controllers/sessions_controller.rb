@@ -6,8 +6,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       if user.activated?
-        log_in user
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        session[:user_id] = user.id
+        # log_in user
+        # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         redirect_back_or user
       else
         message  = "Account not activated. "
@@ -22,9 +23,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # session.delete(:user_id)
-    # @current_user = nil
-    log_out if logged_in?
+    session[:user_id] = nil
+    # log_out if logged_in?
     redirect_to root_path
   end
 end

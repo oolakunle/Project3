@@ -1,25 +1,21 @@
 <p>
-  <strong>Title:</strong>
+  <%= image_tag @product.image, :width => 650, :height => 650, :class => 'img-rounded' %>
+</p>
+
+<p>
   <%= @product.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @product.description %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @product.image, :width => 800, :height => 800, :class => 'img-rounded' %>
-</p>
 
 <p>
-  <strong>Suburb:</strong>
   <%= @product.suburb %>
 </p>
 
 <p>
-  <strong>Category:</strong>
   <%= @product.category.name %>
 </p>
 

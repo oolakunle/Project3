@@ -2,10 +2,6 @@
   <%= @category.name %>
 </h1>
 
-
-  <%= products.title %>
-
-
 <% if current_user.admin? %>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <% end %>

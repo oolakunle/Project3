@@ -3,10 +3,11 @@
     <h1>Products</h1>
   </div>
 
-  <h3><%= link_to 'New Product', new_product_path %></h3>
+  <h3><%= link_to 'New Product', new_product_path, :class => 'product' %></h3>
 
+<div class="container">
 
-  <div class="row col-sm-3">
+  <!-- <div class="row col-sm-3">
     <h3 class>Search Products</h3>
     <%= form_tag products_path, :method => 'get' do %>
       <p>
@@ -16,21 +17,46 @@
       </p>
     <% end %>
   </div>
+</div> -->
+
+  <div class="table-responsive">
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <br>
+    <table class="table table-bordered table-striped">
+      <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>Suburb</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+
+      <tbody id="myTable">
+        <% @products.each do |product| %>
+          <tr>
+              <td><%= link_to product.title, product %></td>
+              <td><%= product.description %></td>
+              <td><%= image_tag product.image, :width => 100, :height => 100, :alt => product.title, :class => 'img-thumbnail' %></td>
+            <td><%= product.suburb %></td>
+            <td><%= product.category.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
 </div>
 
-<table>
-
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= image_tag product.image, :width => 100, :height => 100, :alt => product.title, :class => 'img-thumbnail' %></td>
-        <div>
-          <td><%= link_to product.title, product %><br /><br /><%= product.description %></td>
-        </div>
-        <td><%= product.suburb %></td>
-        <td><%= product.category.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
